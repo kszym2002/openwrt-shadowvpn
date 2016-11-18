@@ -1,12 +1,13 @@
-ShadowVPN for OpenWrt
+ShadowVPN for OpenWrt mwan3
 ===
 
 简介
 ---
-
+ 本项目搬运自 aa65535 大大修改部分代码，实现mwan3 负载均衡 策略路由使用
+	
  本项目是 [ShadowVPN][1] 在 OpenWrt 上的移植  
  当前版本: 0.2.0-1  
- [预编译 IPK 下载][2]  
+
 
 编译
 ---
@@ -18,7 +19,7 @@ ShadowVPN for OpenWrt
    tar xjf OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
    cd OpenWrt-SDK-ar71xx-*
    # 获取 Makefile
-   git clone https://github.com/aa65535/openwrt-shadowvpn.git package/shadowvpn
+   git clone https://github.com/kszym2002/openwrt-shadowvpn.git package/shadowvpn
    # 选择要编译的包 Network -> ShadowVPN
    make menuconfig
    # 开始编译
@@ -29,30 +30,19 @@ ShadowVPN for OpenWrt
 ---
 
  - 多用户配置参考 [Wiki][W]  
+	- SSH
+	 
+		> 请先自行配制 /etc/shadowvpn/client.conf
+		
+  > 直接运行 /etc/init.d/shadowvpn start
+		
+	 > 在网络--接口处多出 tun0 接口 
+		
+  > 直接在 mwan3 配置策咯路由 后面给出我收集的部分 ipset ip段
+		
+	- LUCI
+  > 未完成
 
- - 建议[搭配 ChinaDNS-C 使用][8], 以获得更好的使用体验  
-
- - 使用 **路由控制** 控制流量是否走 VPN
-
-   > 默认不带路由文件, 可读取 ChinaDNS-C 的 [chnroute][3] 生成国内路由规则, 否则为全局模式.  
-
- - 关于 [LuCI][L] 中路由表设置(uci: route_mode)  
-
-    * **全局模式(0):** 启动后全部流量都经过 VPN  
-
-    * **国内路由(1):** 路由文件中的 IP 将不经过 VPN, 如路由文件不存在则仍为**全局模式**  
-
-    * **国外路由(2):** 只有路由文件中的 IP 经过 VPN, 如路由文件不存在则不使用 VPN  
-
-----------
-
- Name                     | Description
- -------------------------|-----------------------------------
- [openwrt-chinadns][5]    | ChinaDNS-C for OpenWrt
- [openwrt-dnsmasq][6]     | Dnsmasq Patch & Makefile for OpenWrt
- [openwrt-shadowsocks][7] | Shadowsocks-libev for OpenWrt
- [openwrt-redsocks2][R]   | RedSocks2 for OpenWrt
- [openwrt-dist-luci][L]   | LuCI Applications for OpenWrt-dist
 
 
   [1]: https://github.com/clowwindy/ShadowVPN
