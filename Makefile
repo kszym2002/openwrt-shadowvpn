@@ -53,6 +53,7 @@ define Package/ShadowVPN/install
 	$(INSTALL_DIR) $(1)/etc/shadowvpn
 	$(INSTALL_DATA) ./files/client_up.sh $(1)/etc/shadowvpn/client_up.sh
 	$(INSTALL_DATA) ./files/client_down.sh $(1)/etc/shadowvpn/client_down.sh
+	$(INSTALL_DATA) ./files/client.conf $(1)/etc/shadowvpn/client.conf
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/shadowvpn $(1)/usr/bin
 	$(INSTALL_DIR) $(1)/etc/hotplug.d/iface
