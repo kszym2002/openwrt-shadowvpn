@@ -37,9 +37,13 @@ ShadowVPN for OpenWrt mwan3
  - SSH
 
   > 请先自行配制 /etc/shadowvpn/client.conf
+  
   > 直接运行 /etc/init.d/shadowvpn start
+  
   > 在网络--接口处多出 tun0 接口 
+  
   > 直接在 mwan3 配置策咯路由 后面给出我收集的部分 ipset ip段
+  
  - LUCI
   > 未完成
 
