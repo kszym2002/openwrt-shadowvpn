@@ -3,8 +3,7 @@ ShadowVPN for OpenWrt mwan3
 
 简介
 ---
- 本项目搬运自 aa65535 大大修改部分代码，实现mwan3 负载均衡 策略路由使用
-	
+ 本项目搬运自 [aa65535][2] 大大修改部分代码，实现mwan3 负载均衡 策略路由
  本项目是 [ShadowVPN][1] 在 OpenWrt 上的移植  
  当前版本: 0.2.0-1  
 
@@ -30,23 +29,19 @@ ShadowVPN for OpenWrt mwan3
 ---
 
  - 多用户配置参考 [Wiki][W]  
-	- SSH
-	 
-		> 请先自行配制 /etc/shadowvpn/client.conf
-		
+ - SSH
+
+  > 请先自行配制 /etc/shadowvpn/client.conf
   > 直接运行 /etc/init.d/shadowvpn start
-		
-	 > 在网络--接口处多出 tun0 接口 
-		
+  > 在网络--接口处多出 tun0 接口 
   > 直接在 mwan3 配置策咯路由 后面给出我收集的部分 ipset ip段
-		
-	- LUCI
+ - LUCI
   > 未完成
 
 
 
   [1]: https://github.com/clowwindy/ShadowVPN
-  [2]: https://sourceforge.net/projects/openwrt-dist/files/shadowvpn/
+  [2]: https://github.com/aa65535/openwrt-shadowvpn
   [3]: https://github.com/clowwindy/ChinaDNS-C/blob/master/chnroute.txt
   [5]: https://github.com/aa65535/openwrt-chinadns
   [6]: https://github.com/aa65535/openwrt-dnsmasq
