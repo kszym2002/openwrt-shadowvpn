@@ -51,7 +51,7 @@ ShadowVPN for OpenWrt mwan3
 
  Name                     | Description
  -------------------------|-----------------------------------
- [ipset PS4][5]           | 收集了战地1日本美国IP段 
+ [ipset BF1][5]           | 收集了战地1日本美国IP段 
  [ipset HK][6]            | 收集了HK IP段
  [ipset TW][7]            | 收集了TW IP段
  [ipset KR][R]            | 收集了KR IP段
